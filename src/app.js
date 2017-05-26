@@ -5,7 +5,7 @@ const openStream = require('./openStream');
 
 openStream(function(stream){
     playVideo(stream, 'localStream')
-    const p = new Peer({ initiator: location.hash === '#1', trickle: false, stream });
+    const p = new Peer({ initiator: location.hash === '#1', trickle: true, stream });
 
     p.on('signal', token => {
         $('#txtMySignal').val(JSON.stringify(token))
